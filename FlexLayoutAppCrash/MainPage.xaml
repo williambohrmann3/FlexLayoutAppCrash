@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="FlexLayoutAppCrash.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:foldable="clr-namespace:Microsoft.Maui.Controls.Foldable;assembly=Microsoft.Maui.Controls.Foldable">
+
+    <foldable:TwoPaneView MinWideModeWidth="{OnIdiom Phone=400, Default=900}">
+
+        <foldable:TwoPaneView.Pane1>
+            <Border>
+                <FlexLayout Wrap="Wrap">
+                    <Button x:Name="BillboardedButton"
+                            Margin="5,5,5,5"
+                            IsEnabled="False"
+                            MinimumWidthRequest="200"
+                            Text="Draped Billboarded" />
+                    <Button x:Name="FlatButton"
+                            Margin="5,5,5,5"
+                            MinimumWidthRequest="200"
+                            Text="Draped Flat" />
+                    <Slider x:Name="ZSlider"
+                            Margin="5,5,5,5"
+                            Maximum="140"
+                            WidthRequest="200"
+                            Minimum="0"
+                            MinimumWidthRequest="200"
+                            Value="70" />
+                    <Label x:Name="ValueLabel"
+                           Margin="5,5,5,5"
+                           Text="Z Value: 70 meters" />
+                </FlexLayout>
+            </Border>
+        </foldable:TwoPaneView.Pane1>
+
+        <foldable:TwoPaneView.Pane2>
+            <ScrollView>
+                <VerticalStackLayout Padding="30,0"
+                                     Spacing="25"
+                                     VerticalOptions="Center">
+
+                    <Image HeightRequest="200"
+                           HorizontalOptions="Center"
+                           SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                           Source="dotnet_bot.png" />
+
+                    <Label FontSize="32"
+                           HorizontalOptions="Center"
+                           SemanticProperties.HeadingLevel="Level1"
+                           Text="Hello, World!" />
+                </VerticalStackLayout>
+            </ScrollView>
+        </foldable:TwoPaneView.Pane2>
+
+    </foldable:TwoPaneView>
+
+</ContentPage>
